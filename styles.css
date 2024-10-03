@@ -67,4 +67,33 @@ button:hover {
     background-color: #f0f0f0; 
 }
 
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Reduced padding */
+        border-radius: 12px; /* Slightly reduced radius for smaller screens */
+    }
 
+    input {
+        width: 100%; /* Make input full width */
+        padding: 10px; /* Keep padding consistent */
+        margin-right: 0; /* Remove right margin */
+        margin-bottom: 10px; /* Add margin below for spacing */
+    }
+
+    button {
+        width: 100%; /* Make button full width */
+        padding: 10px; /* Keep padding consistent */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Further reduce padding for very small screens */
+        border-radius: 8px; /* Further reduce radius */
+    }
+
+    input, button {
+        font-size: 16px; /* Increase font size for better readability */
+    }
+}
