@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: white;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .heart {
+      font-size: 3rem;
+      margin: 20px;
+      color: white;
+      animation: pulse 1.5s infinite;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #ff5e78;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+    }
+    .button:hover {
+      transform: scale(1.1);
+      background-color: #ff8694;
+    }
+    .message {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      color: #ff5e78;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .interaction {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      color: #ff5e78;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .interaction button {
+      padding: 10px 15px;
+      margin: 10px;
+      background-color: #ff5e78;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .interaction button:hover {
+      background-color: #ff8694;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .heart {
+        font-size: 2rem;
+      }
+      .button {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey there, Abby! 💕</h1>
+  <div class="heart">❤️</div>
+  <button class="button" onclick="showMessage()">Click Me!</button>
+  <div id="message" class="message">You are the reason behind my smile! 🌸</div>
+  <div id="interaction" class="interaction">
+    <p>Want to play a little game? 😊</p>
+    <button onclick="revealHeart()">Reveal a Heart</button>
+    <button onclick="surpriseMessage()">Get a Surprise</button>
+  </div>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById('message');
+      const interaction = document.getElementById('interaction');
+      message.style.display = 'block';
+      setTimeout(() => {
+        interaction.style.display = 'block';
+      }, 1000);
+    }
+
+    function revealHeart() {
+      const heart = document.createElement('div');
+      heart.style.fontSize = '2rem';
+      heart.style.color = '#ff5e78';
+      heart.style.marginTop = '10px';
+      heart.innerText = '💖 A heart for you!';
+      document.body.appendChild(heart);
+    }
+
+    function surpriseMessage() {
+      const messages = [
+        "You're absolutely amazing! 🌟",
+        "You are very short LOL! 🔥",
+        "You're my sunshine on a cloudy day! ☀️",
+        "You make every moment special! 💫",
+        "Broooo everytime you run it's always funny and cute T_T",
+        "Ma divide pa yun sis!!"
+      ];
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      const surpriseDiv = document.createElement('div');
+      surpriseDiv.style.marginTop = '10px';
+      surpriseDiv.style.padding = '15px';
+      surpriseDiv.style.background = 'rgba(255, 255, 255, 0.8)';
+      surpriseDiv.style.borderRadius = '10px';
+      surpriseDiv.style.boxShadow = '2px 2px 10px rgba(0, 0, 0, 0.3)';
+      surpriseDiv.style.color = '#ff5e78';
+      surpriseDiv.style.fontSize = '1.2rem';
+      surpriseDiv.style.textAlign = 'center';
+      surpriseDiv.innerText = randomMessage;
+      document.body.appendChild(surpriseDiv);
+    }
+  </script>
+</body>
+</html>
